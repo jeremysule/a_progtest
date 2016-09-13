@@ -110,13 +110,13 @@ public class RandomGenTest {
         RandomGen rGen = new RandomGen(nums, probs);
         int[] counter = new int[4];
 
-        int totalRuns = 2_000_000;
+        int totalRuns = 10_000_000;
         for (int i = 0; i < totalRuns; i++) {
             counter[rGen.nextNum()]++;
         }
-        float testPrecision = 0.001f;
+        float testPrecision = 0.001f; //rough
         for (int i = 0; i < 4; i++) {
-            assertTrue("Real spread should follow defined probability", Math.abs(counter[i]/(float)totalRuns - probs[i]) < testPrecision);
+            assertTrue("Real spread should roughly follow defined probability", Math.abs(counter[i]/(float)totalRuns - probs[i]) < testPrecision);
         }
 
     }

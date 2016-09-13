@@ -4,4 +4,4 @@ Considerations:
   do we need to make a defensive copy?
   treemap or array with binary search?
   Random VS SecureRandom
-  testRepartition: how to test we follow the probabilities? Try many times. Looks like there is some accepted methods out there.
+  testRepartition: how to test we follow the probabilities? Try many times. Should check if there is some accepted methods out there.
