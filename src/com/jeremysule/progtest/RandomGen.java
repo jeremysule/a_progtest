@@ -16,25 +16,13 @@ import static com.jeremysule.progtest.Utils.*;
  */
 public class RandomGen {
 
-    // Values that may be returned by nextNum()
-
     private final int[] randomNums;
-
 
     private final float[] probabilitiesRange;
 
     private final Random random = new Random();
 
-
-
-
-    /**
-     *
-     * @param randomNums
-     * @param probabilities
-     */
     public RandomGen(int[] randomNums, float[] probabilities) {
-
 
         checkValidArguments(randomNums,probabilities);
 
@@ -45,7 +33,6 @@ public class RandomGen {
         for (int i = 1; i < probabilitiesRange.length; i++) {
             probabilitiesRange[i] += probabilitiesRange[i-1];
         }
-
     }
 
     private void checkValidArguments(int[] randomNums, float[] probabilities) {
@@ -71,7 +58,6 @@ public class RandomGen {
         if (!isEqual(sum,1f)){
             throw new IllegalArgumentException(String.format(PROBS_NOT_ADD1_FORMATTED,sum));
         }
-
     }
 
 
@@ -86,13 +72,9 @@ public class RandomGen {
     /**
 
      Returns one of the randomNums. When this method is called
-
      multiple times over a long period, it should return the
-
      numbers roughly with the initialized probabilities.
-
      */
-
     public int nextNum() {
         return searchAndRetrieveNum(random.nextFloat());
     }

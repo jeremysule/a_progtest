@@ -1,0 +1,7 @@
+SELECT p.name, p.available_from, SUM(NVL(o.quantity,0))  as quantity_sold_prev_year FROM orders o RIGHT OUTER JOIN product p ON o.product_id = p.product_id
+  WHERE p.available_from < ADD_MONTHS( CURRENT_DATE, -1 )
+  AND (( o.dispatch_date > ADD_MONTHS( CURRENT_DATE, -12 ) OR o.dispatch_date IS NULL ))
+  GROUP BY p.name, p.available_from
+  HAVING SUM(NVL(o.quantity,0)) < 10;
+
+

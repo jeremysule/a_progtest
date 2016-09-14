@@ -1,6 +1,6 @@
 package com.jeremysule.progtest;
 
-public class Utils {
+class Utils {
 
     public static final float PRECISION = 0.000001f;
 
